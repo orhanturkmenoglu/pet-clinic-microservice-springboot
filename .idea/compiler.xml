@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="vet-service" />
+        <module name="appointment-service" />
+        <module name="medical-record-service" />
+        <module name="pet-service" />
+        <module name="report-service" />
+        <module name="notification-service" />
+        <module name="billing-service" />
+        <module name="owner-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="appointment-service" options="-parameters" />
+      <module name="billing-service" options="-parameters" />
+      <module name="medical-record-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="owner-service" options="-parameters" />
+      <module name="pet-service" options="-parameters" />
+      <module name="report-service" options="-parameters" />
+      <module name="vet-service" options="-parameters" />
+    </option>
+  </component>
+</project>

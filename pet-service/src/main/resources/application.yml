@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: PET-SERVICE
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/pet-service
+
+
