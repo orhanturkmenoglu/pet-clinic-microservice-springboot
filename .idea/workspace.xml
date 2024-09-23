@@ -4,35 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
-      <change afterPath="$PROJECT_DIR$/service-registry/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/AppointmentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/AppointmentServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/MedicalRecordServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/MedicalRecordServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notification_service/NotificationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notification_service/NotificationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/OwnerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/OwnerServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/PetServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/PetServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/ReportServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/ReportServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/VetServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/VetServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/BillingServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/BillingServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +209,7 @@
       <workItem from="1726908965166" duration="620000" />
       <workItem from="1726994080160" duration="3566000" />
       <workItem from="1727094599591" duration="4066000" />
-      <workItem from="1727099561260" duration="170000" />
+      <workItem from="1727099561260" duration="528000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -250,7 +227,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726997657135</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration.">
+      <option name="closed" value="true" />
+      <created>1727099934212</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727099934212</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration.">
+      <option name="closed" value="true" />
+      <created>1727099962787</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727099962787</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +262,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service" />
+    <MESSAGE value="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration." />
   </component>
 </project>
