@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: SERVICE-REGISTRY
+
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    fetch-registry: false    # Bu ayar, mikro hizmetin Eureka sunucusundan hizmet kayıtlarını alıp almayacağını belirler.
+    register-with-eureka: false  # Bu ayar, mikro hizmetin kendini Eureka sunucusuna kaydedip kaydetmeyeceğini belirler.
+
+
+server:
+  port: 8761  #default eureka port

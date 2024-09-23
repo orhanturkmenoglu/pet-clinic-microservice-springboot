@@ -13,6 +13,7 @@
         <module name="pet-service" />
         <module name="report-service" />
         <module name="notification-service" />
+        <module name="service-registry" />
         <module name="billing-service" />
         <module name="owner-service" />
       </profile>
@@ -27,6 +28,7 @@
       <module name="owner-service" options="-parameters" />
       <module name="pet-service" options="-parameters" />
       <module name="report-service" options="-parameters" />
+      <module name="service-registry" options="-parameters" />
       <module name="vet-service" options="-parameters" />
     </option>
   </component>
