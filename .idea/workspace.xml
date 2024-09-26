@@ -4,12 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="feat: API Gateway added">
-      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/external/PetClientService.java" afterDir="false" />
+    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="Added Feign Client for Owner Service">
+      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/owner-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/OwnerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/OwnerServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +85,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.OwnerServiceApplication.executor": "Run",
     "Spring Boot.PetServiceApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
@@ -74,7 +93,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/spring-boot/pet-clinic-microservice-springboot/api-gateway/src/main/resources",
+    "last_opened_file_path": "D:/spring-boot/pet-clinic-microservice-springboot/config-server/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,11 +118,11 @@
       <recent name="com.example.owner_service.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\spring-boot\pet-clinic-microservice-springboot\config-server\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\api-gateway\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\service-registry\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\report-service\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\pet-service\src\main\resources" />
-      <recent name="D:\spring-boot\pet-clinic-microservice-springboot\owner-service\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.appointment_service.dto" />
@@ -147,6 +166,13 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="billing-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.billing_service.BillingServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.config_server.ConfigServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -231,7 +257,7 @@
       <workItem from="1727094599591" duration="4066000" />
       <workItem from="1727099561260" duration="14032000" />
       <workItem from="1727159011183" duration="51000" />
-      <workItem from="1727355385471" duration="7800000" />
+      <workItem from="1727355385471" duration="9982000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -305,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727361610871</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Feign Client for Owner Service">
+      <option name="closed" value="true" />
+      <created>1727363495459</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1727363495459</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +362,8 @@
     <MESSAGE value="pet-service,owner-service,veterinarian-service updated." />
     <MESSAGE value="feat: All service requirements have been implemented" />
     <MESSAGE value="feat: API Gateway added" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: API Gateway added" />
+    <MESSAGE value="Added Feign Client for Owner Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Feign Client for Owner Service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="vet-service" />
         <module name="appointment-service" />
         <module name="medical-record-service" />
@@ -25,6 +26,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="appointment-service" options="-parameters" />
       <module name="billing-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="medical-record-service" options="-parameters" />
       <module name="notification-service" options="-parameters" />
       <module name="owner-service" options="-parameters" />

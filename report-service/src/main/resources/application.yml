@@ -5,12 +5,15 @@ spring:
   application:
     name: REPORT-SERVICE
 
-#eureka config
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone : http://localhost:8761/eureka
+##eureka config
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone : http://localhost:8761/eureka
+
+  config:
+    import: configserver:http://localhost:8088

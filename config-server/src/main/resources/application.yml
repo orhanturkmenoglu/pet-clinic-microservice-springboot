@@ -1,0 +1,13 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: CONFIG-SERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/orhanturkmenoglu/microservice-tutorial-config
+          clone-on-start: true  # Bu ayar, Config Server başlatıldığında belirtilen Git deposunun klonlanıp klonlanmayacağını belirler.
