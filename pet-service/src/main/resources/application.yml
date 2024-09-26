@@ -7,7 +7,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/pet-service
+      uri: mongodb://localhost:27017/pet-clinic
 
 #eureka config
 eureka:

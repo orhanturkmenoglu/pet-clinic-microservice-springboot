@@ -5,6 +5,9 @@ spring:
   application:
     name: MEDICAL-RECORD-SERVICE
 
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/pet-clinic
 
 #eureka config
 eureka:
