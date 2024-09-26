@@ -4,37 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="pet-service,owner-service,veterinarian-service updated.">
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/controller/AppointmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/dto/AppointmentRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/dto/AppointmentResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/model/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/repository/AppointmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/service/AppointmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/controller/BillingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/model/Billing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/repository/BillingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/service/BillingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/controller/MedicalRecordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/dto/MedicalRecordRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/dto/MedicalRecordResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/model/MedicalRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/repository/MedicalRecordRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/service/MedicalRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/controller/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/model/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/repository/ReportRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java" afterDir="false" />
+    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="feat: All service requirements have been implemented">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +66,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.OwnerServiceApplication.executor": "Run",
     "Spring Boot.PetServiceApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
@@ -98,7 +74,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/spring-boot/pet-clinic-microservice-springboot",
+    "last_opened_file_path": "D:/spring-boot/pet-clinic-microservice-springboot/api-gateway/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,11 +99,11 @@
       <recent name="com.example.owner_service.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\spring-boot\pet-clinic-microservice-springboot\api-gateway\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\service-registry\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\report-service\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\pet-service\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\owner-service\src\main\resources" />
-      <recent name="D:\spring-boot\pet-clinic-microservice-springboot\notification-service\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.appointment_service.dto" />
@@ -152,6 +128,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ServiceRegistryApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.api.gateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppointmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="appointment-service" />
@@ -248,7 +231,7 @@
       <workItem from="1727094599591" duration="4066000" />
       <workItem from="1727099561260" duration="14032000" />
       <workItem from="1727159011183" duration="51000" />
-      <workItem from="1727355385471" duration="3151000" />
+      <workItem from="1727355385471" duration="5658000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -298,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727355526178</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: All service requirements have been implemented">
+      <option name="closed" value="true" />
+      <created>1727358622470</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727358622470</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +310,8 @@
     <MESSAGE value="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service" />
     <MESSAGE value="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration." />
     <MESSAGE value="pet-service,owner-service,veterinarian-service updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="pet-service,owner-service,veterinarian-service updated." />
+    <MESSAGE value="feat: All service requirements have been implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: All service requirements have been implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

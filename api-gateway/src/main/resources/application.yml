@@ -1,0 +1,71 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: VET-SERVICE
+          uri: lb://VET-SERVICE
+          predicates:
+            - Path=/api/v1/vets/**
+
+        - id: SERVICE-REGISTRY
+          uri: lb://SERVICE-REGISTRY
+          predicates:
+            - Path=/eureka/**
+
+        - id: REPORT-SERVICE
+          uri: lb://REPORT-SERVICE
+          predicates:
+            - Path=/api/v1/reports/**
+
+        - id: PET-SERVICE
+          uri: lb://PET-SERVICE
+          predicates:
+            - Path=/api/v1/pets/**
+
+        - id: OWNER-SERVICE
+          uri: lb://OWNER-SERVICE
+          predicates:
+            - Path=/api/v1/owners/**
+
+        - id: NOTIFICATION-SERVICE
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/api/v1/notifications/**
+
+        - id: MEDICAL-RECORD-SERVICE
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/api/v1/medical_records/**
+
+        - id: BILLING-SERVICE
+          uri: lb://BILLING-SERVICE
+          predicates:
+            - Path=/api/v1/billings/**
+
+        - id: APPOINTMENT-SERVICE
+          uri: lb://APPOINTMENT-SERVICE
+          predicates:
+            - Path=/api/v1/appointments/**
+
+
+
+
+#eureka config
+eureka:
+  instance:
+    prefer-ip-address: true  # Mikro hizmet, kendini kaydederken IP adresini tercih eder. Yani, Eureka'ya kayıt olduğunda, hizmetin IP adresi (hostname yerine) kullanılır.
+  client:
+    fetch-registry: true  # Mikro hizmet, Eureka sunucusundan diğer hizmetlerin kayıtlı bilgilerini alır.
+    register-with-eureka: true  # ikro hizmet, başlatıldığında kendini Eureka sunucusuna kaydeder.
+    service-url:
+      defaultZone: http://localhost:8761/eureka # Bu ayar, mikro hizmetin kayıt olacağı ve diğer hizmet bilgilerini alacağı Eureka sunucusunun URL'sini belirtir.
+
+logging:
+  level:
+    org.springframework.cloud.gateway : DEBUG #Gateway için log seviyesini belirler.
+
