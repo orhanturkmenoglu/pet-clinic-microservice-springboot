@@ -5,11 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/config/OwnerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/controller/OwnerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/model/Owner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/model/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/repository/OwnerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/config/PetConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/OwnerResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/repository/VeterinarianRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/BillingServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/BillingServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/model/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/model/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/repository/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/repository/PetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +45,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="com.intellij.jpb.NewClass" />
         <option value="Interface" />
+        <option value="com.intellij.jpb.NewClass" />
+        <option value="com.intellij.jpb.JpaRepository" />
         <option value="Class" />
       </list>
     </option>
@@ -55,40 +79,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.pet-service [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.pet-service [compile].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.PetServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.VetServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/spring-boot/pet-clinic-microservice-springboot/service-registry/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.pet-service [clean,install].executor": "Run",
+    "Maven.pet-service [compile].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.OwnerServiceApplication.executor": "Run",
+    "Spring Boot.PetServiceApplication.executor": "Run",
+    "Spring Boot.ServiceRegistryApplication.executor": "Run",
+    "Spring Boot.VetServiceApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/spring-security/springsecsection1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "service.view.auto.scroll.to.source": "true",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mongo&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
     ]
   }
-}</component>
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.owner_service.dto" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\service-registry\src\main\resources" />
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\report-service\src\main\resources" />
@@ -98,6 +129,9 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.pet.service.dto" />
+      <recent name="com.example.owner_service.model" />
+      <recent name="com.example.owner_service.dto" />
+      <recent name="com.example.vet_service.dto" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -209,7 +243,8 @@
       <workItem from="1726908965166" duration="620000" />
       <workItem from="1726994080160" duration="3566000" />
       <workItem from="1727094599591" duration="4066000" />
-      <workItem from="1727099561260" duration="528000" />
+      <workItem from="1727099561260" duration="14032000" />
+      <workItem from="1727159011183" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -243,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727099962787</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration.">
+      <option name="closed" value="true" />
+      <created>1727100116201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727100116201</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,5 +307,66 @@
     <MESSAGE value="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service" />
     <MESSAGE value="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration." />
     <option name="LAST_COMMIT_MESSAGE" value="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/controller/OwnerController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

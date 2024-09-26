@@ -1,7 +1,9 @@
 package com.example.pet.service.model;
 
+import com.example.pet.service.dto.OwnerResponseDto;
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
@@ -19,6 +21,8 @@ public class Pet implements Serializable {
     @Id
     private String id;
 
+    private String ownerId;  // sahip kimliği.
+
     private String name;
 
     private String type; // türü kedi,köpek vb
@@ -32,6 +36,7 @@ public class Pet implements Serializable {
     private String color;
 
     private String description;
+
 
 }
 

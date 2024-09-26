@@ -13,8 +13,8 @@ import java.io.Serializable;
 @Schema(description = "Data transfer object for pet request")
 public class PetRequestDto implements Serializable {
 
-    @Schema(description = "Unique identifier for the pet", example = "12345")
-    private String id;
+    @Schema(description = "The owner id of the pet", example = "12345")
+    private String ownerId;  // sahip kimliği.
 
     @Schema(description = "The name of the pet", example = "Buddy")
     private String name;

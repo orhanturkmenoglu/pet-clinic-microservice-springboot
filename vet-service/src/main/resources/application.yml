@@ -5,6 +5,18 @@ spring:
   application:
     name: VET-SERVICE
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/pet-clinic
+    username: root
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
 #eureka config
 eureka:
   instance:

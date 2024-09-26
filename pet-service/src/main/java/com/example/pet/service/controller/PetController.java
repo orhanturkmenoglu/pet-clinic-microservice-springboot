@@ -10,10 +10,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/pets")
@@ -24,14 +23,28 @@ public class PetController {
 
     @PostMapping
     @Operation(summary = "Create a new pet")
-    @ApiResponses(value ={
-            @ApiResponse(responseCode ="201",description ="Pet created successful"),
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Pet created successful"),
             @ApiResponse(responseCode = "400", description = "Invalid input")
     })
     public ResponseEntity<PetResponseDto> createPet(
-            @Parameter(description = "Pet request DTO containing pet details",required = true)
+            @Parameter(description = "Pet request DTO containing pet details", required = true)
             @RequestBody PetRequestDto petRequestDto) {
         PetResponseDto petResponseDto = petService.createPet(petRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(petResponseDto);
     }
+
+
+    @GetMapping("owner/{ownerId}")
+    @Operation(summary = "get pet by owner id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Pet successful"),
+            @ApiResponse(responseCode = "400", description = "Invalid input")
+    })
+    public ResponseEntity<List<PetResponseDto>> getPetByOwnerId(
+            @Parameter(description = "Owner ID", required = true)
+            @PathVariable String ownerId) {
+        return ResponseEntity.ok(petService.getPetByOwnerId(ownerId));
+    }
+
 }
