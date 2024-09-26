@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="feat: All service requirements have been implemented">
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="feat: API Gateway added">
+      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/external/PetClientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/OwnerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/OwnerServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="com.intellij.jpb.NewClass" />
         <option value="com.intellij.jpb.JpaRepository" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -231,7 +231,7 @@
       <workItem from="1727094599591" duration="4066000" />
       <workItem from="1727099561260" duration="14032000" />
       <workItem from="1727159011183" duration="51000" />
-      <workItem from="1727355385471" duration="5658000" />
+      <workItem from="1727355385471" duration="7800000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -289,7 +289,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727358622470</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: API Gateway added">
+      <option name="closed" value="true" />
+      <created>1727361592611</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727361592611</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: API Gateway added">
+      <option name="closed" value="true" />
+      <created>1727361610870</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1727361610871</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,14 +327,15 @@
     <MESSAGE value="Add Service Registry and Eureka for service discovery.&#10;- Integrated Eureka as the service registry module.&#10;- Configured application to register with Eureka and fetch service instances.&#10;- Set up health checks for better service management.&#10;- Updated application properties for Eureka configuration." />
     <MESSAGE value="pet-service,owner-service,veterinarian-service updated." />
     <MESSAGE value="feat: All service requirements have been implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: All service requirements have been implemented" />
+    <MESSAGE value="feat: API Gateway added" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: API Gateway added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
-          <line>39</line>
+          <line>42</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -363,12 +380,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
-          <line>28</line>
+          <line>31</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
-          <line>80</line>
+          <line>90</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

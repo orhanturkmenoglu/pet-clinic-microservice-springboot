@@ -2,6 +2,7 @@ package com.example.owner_service.service;
 
 import com.example.owner_service.dto.OwnerRequestDto;
 import com.example.owner_service.dto.OwnerResponseDto;
+import com.example.owner_service.external.PetClientService;
 import com.example.owner_service.model.Pet;
 import com.example.owner_service.model.Owner;
 import com.example.owner_service.repository.OwnerRepository;
@@ -23,6 +24,8 @@ public class OwnerService {
 
     private final RestTemplate restTemplate;
 
+    private final PetClientService petClientService;
+
 
     // Sahip oluşturma
     public OwnerResponseDto createOwner(OwnerRequestDto ownerRequestDto) {
@@ -42,13 +45,20 @@ public class OwnerService {
 
         // burada petservice ile iletişime geçilerek sahibe ait hayvan bilgileri getirilecek.
         // http://localhost:8080/api/v1/pets/{ownerId}
-        String  url = "http://localhost:8080/api/v1/pets/owner/";
+       /* String  url = "http://localhost:8080/api/v1/pets/owner/";
         List<Pet> petList = restTemplate.getForObject(url+owner.getId(), ArrayList.class);
 
         log.info("OwnerResponseDto::findOwnerById Pet list: {}", petList);
+        OwnerResponseDto ownerResponseDto = mapToOwnerResponseDto(owner);
+        ownerResponseDto.setPets(petList);*/
+
+        // feign client ile http tabanlı servisler ile iletişim kurabiliriz rest template ile aynı işlevi yerine
+        // getirir ama feign client daha kolay ve okunabilir bir şekilde yazılır. kod yazımıını azaltır
+
+        List<Pet> petListFeign = petClientService.getPetByOwnerId(owner.getId());
 
         OwnerResponseDto ownerResponseDto = mapToOwnerResponseDto(owner);
-        ownerResponseDto.setPets(petList);
+        ownerResponseDto.setPets(petListFeign);
 
         log.info("OwnerResponseDto::findOwnerById Owner: {}", ownerResponseDto);
         return ownerResponseDto;
