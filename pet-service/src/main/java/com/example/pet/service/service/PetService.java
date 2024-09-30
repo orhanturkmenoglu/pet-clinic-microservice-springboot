@@ -3,6 +3,7 @@ package com.example.pet.service.service;
 import com.example.pet.service.dto.OwnerResponseDto;
 import com.example.pet.service.dto.PetRequestDto;
 import com.example.pet.service.dto.PetResponseDto;
+import com.example.pet.service.mapper.PetMapper;
 import com.example.pet.service.model.Pet;
 import com.example.pet.service.repository.PetRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,12 +29,15 @@ public class PetService {
 
     private final RestTemplate restTemplate;
 
+    private final PetMapper mapper = PetMapper.INSTANCE;
+
+
 
     @Transactional
     public PetResponseDto createPet(PetRequestDto petRequestDto) {
-        Pet pet = mapToPet(petRequestDto);
+        Pet pet = mapper.mapToPet(petRequestDto);
         Pet savedPet = petRepository.save(pet);
-        PetResponseDto petResponseDto = mapToPetResponseDto(savedPet);
+        PetResponseDto petResponseDto = mapper.mapToPetResponseDto(savedPet);
         try {
             // owner-service ile iletişim kurup owner id bilgisi ile sahip bilgilerini aktaracaz.
             // exchange(): bütün http isteklerini gerçekleştirmemizi sağlar
@@ -66,7 +70,7 @@ public class PetService {
     public PetResponseDto getPetById(String id) {
         Pet pet = petRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pet not found"));
-        return mapToPetResponseDto(pet);
+        return mapper.mapToPetResponseDto(pet);
     }
 
 
@@ -78,7 +82,7 @@ public class PetService {
 
         pets.add(pet);
 
-        return mapToPetResponseDtoList(pets);
+        return mapper.mapToPetResponseDtoList(pets);
     }
 
 

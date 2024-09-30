@@ -19,13 +19,13 @@ public class VeterinarianService {
 
     private final VeterinarianRepository veterinarianRepository;
 
-   /* private final VeterinarianMapper mapper;*/
+    private final VeterinarianMapper mapper = VeterinarianMapper.INSTANCE;
 
     @Transactional
     public VeterinarianResponseDto createVeterinarian(VeterinarianRequestDto veterinarianRequestDto) {
         log.info("VeterinarianService::createVeterinarian started");
 
-        Veterinarian veterinarian = VeterinarianMapper.INSTANCE.mapToVeterinarian(veterinarianRequestDto);
+        Veterinarian veterinarian = mapper.mapToVeterinarian(veterinarianRequestDto);
         Veterinarian savedVeterinarian = veterinarianRepository.save(veterinarian);
 
 
@@ -33,7 +33,7 @@ public class VeterinarianService {
                 "savedVeterinarian : {}", veterinarian, savedVeterinarian);
 
         log.info("VeterinarianService::createVeterinarian finished");
-        return VeterinarianMapper.INSTANCE.mapToVeterinarianResponseDto(savedVeterinarian);
+        return mapper.mapToVeterinarianResponseDto(savedVeterinarian);
     }
 
     public List<VeterinarianResponseDto> getAllVeterinarians() {
@@ -42,7 +42,7 @@ public class VeterinarianService {
         List<Veterinarian> veterinarians = veterinarianRepository.findAll();
 
         log.info("VeterinarianService::getAllVeterinarians finished");
-        return VeterinarianMapper.INSTANCE.mapToVeterinarianResponseDtoList(veterinarians);
+        return mapper.mapToVeterinarianResponseDtoList(veterinarians);
     }
 
     public VeterinarianResponseDto getVeterinarianById(String id) {
@@ -51,7 +51,7 @@ public class VeterinarianService {
         Veterinarian veterinarian = veterinarianRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Veterinarian not found with id: " + id));
 
-        return VeterinarianMapper.INSTANCE.mapToVeterinarianResponseDto(veterinarian);
+        return mapper.mapToVeterinarianResponseDto(veterinarian);
     }
 
     public void deleteVeterinarian(String id) {
