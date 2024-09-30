@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="Add OpenAPI documentation for all services&#10;&#10;- Added @Schema annotations to DTOs for better API documentation.&#10;- Improved clarity and detail in the OpenAPI documentation for each service.">
+    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="Renamed model in Veterinarian service&#10;&#10;- Changed the name of the model in the Veterinarian service for better clarity and consistency.">
+      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianStructMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +27,8 @@
       <list>
         <option value="com.intellij.jpb.NewClass" />
         <option value="com.intellij.jpb.JpaRepository" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,7 +75,7 @@
     "Spring Boot.OwnerServiceApplication.executor": "Run",
     "Spring Boot.PetServiceApplication.executor": "Run",
     "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "Spring Boot.VetServiceApplication.executor": "Run",
+    "Spring Boot.VetServiceApplication.executor": "Debug",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -106,12 +111,15 @@
       <recent name="D:\spring-boot\pet-clinic-microservice-springboot\api-gateway\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.vet_service.mapper" />
       <recent name="com.example.billing_service.config" />
       <recent name="com.example.medical_record_service.config" />
       <recent name="com.example.vet_service.config" />
       <recent name="com.example.appointment_service.dto" />
-      <recent name="com.example.billing_service.dto" />
     </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -243,7 +251,7 @@
       <workItem from="1727451094801" duration="3605000" />
       <workItem from="1727510618180" duration="3436000" />
       <workItem from="1727702894843" duration="77000" />
-      <workItem from="1727707921659" duration="1432000" />
+      <workItem from="1727707921659" duration="7972000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -341,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727709307249</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Renamed model in Veterinarian service&#10;&#10;- Changed the name of the model in the Veterinarian service for better clarity and consistency.">
+      <option name="closed" value="true" />
+      <created>1727709434434</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1727709434434</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +383,8 @@
     <MESSAGE value="Added Feign Client for Owner Service" />
     <MESSAGE value="Added central configuration via Config Server setup for all systems." />
     <MESSAGE value="Add OpenAPI documentation for all services&#10;&#10;- Added @Schema annotations to DTOs for better API documentation.&#10;- Improved clarity and detail in the OpenAPI documentation for each service." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add OpenAPI documentation for all services&#10;&#10;- Added @Schema annotations to DTOs for better API documentation.&#10;- Improved clarity and detail in the OpenAPI documentation for each service." />
+    <MESSAGE value="Renamed model in Veterinarian service&#10;&#10;- Changed the name of the model in the Veterinarian service for better clarity and consistency." />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed model in Veterinarian service&#10;&#10;- Changed the name of the model in the Veterinarian service for better clarity and consistency." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -416,6 +433,34 @@
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
           <line>79</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianStructMapper.java</url>
+          <line>15</line>
+          <properties class="com.example.vet_service.mapper.VeterinarianStructMapper" method="mapToVeterinarianResponseDto">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianStructMapper.java</url>
+          <line>19</line>
+          <properties class="com.example.vet_service.mapper.VeterinarianStructMapper" method="mapToVeterinarianResponseDtoList">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

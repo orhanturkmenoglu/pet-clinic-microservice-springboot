@@ -2,6 +2,7 @@ package com.example.vet_service.service;
 
 import com.example.vet_service.dto.VeterinarianRequestDto;
 import com.example.vet_service.dto.VeterinarianResponseDto;
+import com.example.vet_service.mapper.VeterinarianMapper;
 import com.example.vet_service.model.Veterinarian;
 import com.example.vet_service.repository.VeterinarianRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -18,19 +19,30 @@ public class VeterinarianService {
 
     private final VeterinarianRepository veterinarianRepository;
 
+   /* private final VeterinarianMapper mapper;*/
 
     @Transactional
     public VeterinarianResponseDto createVeterinarian(VeterinarianRequestDto veterinarianRequestDto) {
         log.info("VeterinarianService::createVeterinarian started");
 
-        Veterinarian veterinarian = mapToVeterinarian(veterinarianRequestDto);
+        Veterinarian veterinarian = VeterinarianMapper.INSTANCE.mapToVeterinarian(veterinarianRequestDto);
         Veterinarian savedVeterinarian = veterinarianRepository.save(veterinarian);
+
 
         log.info("VeterinarianService::createVeterinarian  veterinarian :{} ," +
                 "savedVeterinarian : {}", veterinarian, savedVeterinarian);
 
         log.info("VeterinarianService::createVeterinarian finished");
-        return mapToVeterinarianResponseDto(savedVeterinarian);
+        return VeterinarianMapper.INSTANCE.mapToVeterinarianResponseDto(savedVeterinarian);
+    }
+
+    public List<VeterinarianResponseDto> getAllVeterinarians() {
+        log.info("VeterinarianService::getAllVeterinarians started");
+
+        List<Veterinarian> veterinarians = veterinarianRepository.findAll();
+
+        log.info("VeterinarianService::getAllVeterinarians finished");
+        return VeterinarianMapper.INSTANCE.mapToVeterinarianResponseDtoList(veterinarians);
     }
 
     public VeterinarianResponseDto getVeterinarianById(String id) {
@@ -39,7 +51,7 @@ public class VeterinarianService {
         Veterinarian veterinarian = veterinarianRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Veterinarian not found with id: " + id));
 
-        return mapToVeterinarianResponseDto(veterinarian);
+        return VeterinarianMapper.INSTANCE.mapToVeterinarianResponseDto(veterinarian);
     }
 
     public void deleteVeterinarian(String id) {
@@ -48,40 +60,11 @@ public class VeterinarianService {
         Veterinarian veterinarian = veterinarianRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Veterinarian not found with id: " + id));
 
-        log.info("VeterinarianService::deleteVeterinarian  veterinarian :{} ,",veterinarian);
+        log.info("VeterinarianService::deleteVeterinarian  veterinarian :{} ,", veterinarian);
 
         veterinarianRepository.delete(veterinarian);
 
         log.info("VeterinarianService::deleteVeterinarian finished");
-    }
-
-
-    private VeterinarianResponseDto mapToVeterinarianResponseDto(Veterinarian veterinarian) {
-        return VeterinarianResponseDto.builder()
-                .id(veterinarian.getId())
-                .firstName(veterinarian.getFirstName())
-                .lastName(veterinarian.getLastName())
-                .specialization(veterinarian.getSpecialization())
-                .availability(veterinarian.getAvailability())
-                .address(veterinarian.getAddress())
-                .phoneNumber(veterinarian.getPhoneNumber())
-                .email(veterinarian.getEmail())
-                .veterinarianDate(LocalDateTime.now())
-                .build();
-    }
-
-    private Veterinarian mapToVeterinarian(VeterinarianRequestDto veterinarianRequestDto) {
-        return Veterinarian.builder()
-                .id(veterinarianRequestDto.getId())
-                .firstName(veterinarianRequestDto.getFirstName())
-                .lastName(veterinarianRequestDto.getLastName())
-                .specialization(veterinarianRequestDto.getSpecialization())
-                .availability(veterinarianRequestDto.getAvailability())
-                .address(veterinarianRequestDto.getAddress())
-                .phoneNumber(veterinarianRequestDto.getPhoneNumber())
-                .email(veterinarianRequestDto.getEmail())
-                .veterinarianDate(LocalDateTime.now())
-                .build();
     }
 
 

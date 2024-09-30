@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/v1/veterinarian")
 @RequiredArgsConstructor
@@ -32,6 +34,20 @@ public class VeterinarianController {
             @RequestBody VeterinarianRequestDto veterinarianRequestDto) {
         VeterinarianResponseDto veterinarianResponseDto = veterinarianService.createVeterinarian(veterinarianRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(veterinarianResponseDto);
+    }
+
+    @Operation(summary = "Get veterinarians all", description = "Retrieves  veterinarian's details")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Veterinarian retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Veterinarian not found")
+    })
+    @GetMapping
+    public ResponseEntity<List<VeterinarianResponseDto>> getAllVeterinarians()
+    {
+        List<VeterinarianResponseDto> responseDtoList =
+                veterinarianService.getAllVeterinarians();
+
+        return ResponseEntity.ok(responseDtoList);
     }
 
     @Operation(summary = "Get veterinarian by ID", description = "Retrieves a veterinarian's details by their ID.")

@@ -1,13 +1,7 @@
 package com.example.vet_service.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -48,5 +42,11 @@ public class Veterinarian implements Serializable {
     private String address;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    @Getter
     private LocalDateTime  veterinarianDate;
+
+    @PrePersist
+    protected void onCreate() {
+        this.veterinarianDate = LocalDateTime.now(); // Kayıt yapıldığında tarih otomatik olarak atanır
+    }
 }
