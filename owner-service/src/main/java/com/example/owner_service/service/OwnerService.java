@@ -43,22 +43,11 @@ public class OwnerService {
         Owner owner = ownerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Owner not found"));
 
-        // burada petservice ile iletişime geçilerek sahibe ait hayvan bilgileri getirilecek.
-        // http://localhost:8080/api/v1/pets/{ownerId}
-       /* String  url = "http://localhost:8080/api/v1/pets/owner/";
-        List<Pet> petList = restTemplate.getForObject(url+owner.getId(), ArrayList.class);
-
-        log.info("OwnerResponseDto::findOwnerById Pet list: {}", petList);
-        OwnerResponseDto ownerResponseDto = mapToOwnerResponseDto(owner);
-        ownerResponseDto.setPets(petList);*/
-
         // feign client ile http tabanlı servisler ile iletişim kurabiliriz rest template ile aynı işlevi yerine
         // getirir ama feign client daha kolay ve okunabilir bir şekilde yazılır. kod yazımıını azaltır
 
-        List<Pet> petListFeign = petClientService.getPetByOwnerId(owner.getId());
 
         OwnerResponseDto ownerResponseDto = mapToOwnerResponseDto(owner);
-        ownerResponseDto.setPets(petListFeign);
 
         log.info("OwnerResponseDto::findOwnerById Owner: {}", ownerResponseDto);
         return ownerResponseDto;

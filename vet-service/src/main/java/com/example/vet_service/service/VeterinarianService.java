@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -56,6 +58,7 @@ public class VeterinarianService {
 
     private VeterinarianResponseDto mapToVeterinarianResponseDto(Veterinarian veterinarian) {
         return VeterinarianResponseDto.builder()
+                .id(veterinarian.getId())
                 .firstName(veterinarian.getFirstName())
                 .lastName(veterinarian.getLastName())
                 .specialization(veterinarian.getSpecialization())
@@ -63,6 +66,7 @@ public class VeterinarianService {
                 .address(veterinarian.getAddress())
                 .phoneNumber(veterinarian.getPhoneNumber())
                 .email(veterinarian.getEmail())
+                .createdVeterinarianDate(LocalDateTime.now())
                 .build();
     }
 
@@ -76,6 +80,7 @@ public class VeterinarianService {
                 .address(veterinarianRequestDto.getAddress())
                 .phoneNumber(veterinarianRequestDto.getPhoneNumber())
                 .email(veterinarianRequestDto.getEmail())
+                .createdVeterinarianDate(LocalDateTime.now())
                 .build();
     }
 

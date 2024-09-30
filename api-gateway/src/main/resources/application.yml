@@ -38,7 +38,7 @@ spring:
             - Path=/api/v1/notifications/**
 
         - id: MEDICAL-RECORD-SERVICE
-          uri: lb://NOTIFICATION-SERVICE
+          uri: lb://MEDICAL-RECORD-SERVICE
           predicates:
             - Path=/api/v1/medical_records/**
 

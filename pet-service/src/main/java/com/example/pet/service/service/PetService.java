@@ -84,6 +84,7 @@ public class PetService {
 
     private PetResponseDto mapToPetResponseDto(Pet pet) {
         return PetResponseDto.builder()
+                .id(pet.getId())
                 .ownerId(pet.getOwnerId())
                 .name(pet.getName())
                 .type(pet.getType())

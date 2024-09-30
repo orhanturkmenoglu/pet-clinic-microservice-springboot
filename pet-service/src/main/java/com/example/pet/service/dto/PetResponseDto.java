@@ -14,6 +14,9 @@ import java.io.Serializable;
 @Schema(description = "Data transfer object for pet response")
 public class PetResponseDto implements Serializable {
 
+    @Schema(description = "The id of the pet", example = "12345")
+    private String id;
+
     @Schema(description = "The owner id of the pet", example = "12345")
     private String ownerId;  // sahip kimliği.
 

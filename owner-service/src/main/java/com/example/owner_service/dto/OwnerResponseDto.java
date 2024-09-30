@@ -1,29 +1,35 @@
 package com.example.owner_service.dto;
 
-import com.example.owner_service.model.Pet;
-import jakarta.persistence.Transient;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Schema(description = "Data Transfer Object for Owner response")
 public class OwnerResponseDto implements Serializable {
 
-    String id;
-    String firstName;
-    String lastName;
-    private String phoneNumber;
-    String email;
-    String address;
+    @Schema(description = "Unique identifier of the owner", example = "a1b2c3d4-e5f6-7890-gh12-ijkl3456mnop")
+    private String id;
 
-    @Transient
-    List<Pet> pets;
+    @Schema(description = "First name of the owner", example = "John")
+    private String firstName;
+
+    @Schema(description = "Last name of the owner", example = "Doe")
+    private String lastName;
+
+    @Schema(description = "Phone number of the owner", example = "+1234567890")
+    private String phoneNumber;
+
+    @Schema(description = "Email address of the owner", example = "johndoe@example.com")
+    private String email;
+
+    @Schema(description = "Address of the owner", example = "123 Main St, Springfield")
+    private String address;
 }

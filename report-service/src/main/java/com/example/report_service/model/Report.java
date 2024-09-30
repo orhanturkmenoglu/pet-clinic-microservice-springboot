@@ -26,8 +26,8 @@ public class Report implements Serializable {
     private String id;
     private String petId;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate createdDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDate reportDate;
     private String content;
 
 }

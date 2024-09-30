@@ -23,6 +23,6 @@ public class Billing implements Serializable {
     private String appointmentId;
     private Double amount;
     private String status;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime paymentDate;
 }

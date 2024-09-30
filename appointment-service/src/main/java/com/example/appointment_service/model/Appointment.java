@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class Appointment implements Serializable {
 
     @Id
@@ -26,7 +27,7 @@ public class Appointment implements Serializable {
     private String id;
     private String petId;
     private String vetId;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime appointmentDate;
     private String reason;
     private String status;
