@@ -66,7 +66,7 @@ public class VeterinarianService {
                 .address(veterinarian.getAddress())
                 .phoneNumber(veterinarian.getPhoneNumber())
                 .email(veterinarian.getEmail())
-                .createdVeterinarianDate(LocalDateTime.now())
+                .veterinarianDate(LocalDateTime.now())
                 .build();
     }
 
@@ -80,7 +80,7 @@ public class VeterinarianService {
                 .address(veterinarianRequestDto.getAddress())
                 .phoneNumber(veterinarianRequestDto.getPhoneNumber())
                 .email(veterinarianRequestDto.getEmail())
-                .createdVeterinarianDate(LocalDateTime.now())
+                .veterinarianDate(LocalDateTime.now())
                 .build();
     }
 

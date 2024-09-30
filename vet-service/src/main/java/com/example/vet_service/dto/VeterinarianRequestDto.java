@@ -39,5 +39,5 @@ public class VeterinarianRequestDto implements Serializable {
     private String address;
 
     @Schema(description = "The date and time when the veterinarian was created", example = "2023-09-28T10:15:30")
-    private LocalDateTime createdVeterinarianDate;
+    private LocalDateTime veterinarianDate;
 }
