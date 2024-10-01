@@ -6,6 +6,10 @@ import com.example.pet.service.dto.PetResponseDto;
 import com.example.pet.service.mapper.PetMapper;
 import com.example.pet.service.model.Pet;
 import com.example.pet.service.repository.PetRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpMethod;
@@ -29,19 +33,28 @@ public class PetService {
 
     private final RestTemplate restTemplate;
 
-    private final PetMapper mapper = PetMapper.INSTANCE;
+    private final PetMapper petMapper;
 
-
+    int retryCount = 1;
 
     @Transactional
+    @RateLimiter(name = "ownerRateLimiter", fallbackMethod = "ownerFallback")
+    @CircuitBreaker(name = "ownerBreaker", fallbackMethod = "ownerFallback") // devre kesici.
+    @Retry(name = "ownerRetry", fallbackMethod = "ownerFallback") // tekrar deneme mekanizması
+   // üçünüde aynı anda kullanırsak ilk devreye girecek ratelimiter,sonra circuitbreaker,retry şeklinde çalışacak.
     public PetResponseDto createPet(PetRequestDto petRequestDto) {
-        Pet pet = mapper.mapToPet(petRequestDto);
+        log.info("PetResponseDto::createPet started");
+
+        log.info("retry count : {}", retryCount);
+        retryCount++;
+
+        Pet pet = petMapper.mapToPet(petRequestDto);
         Pet savedPet = petRepository.save(pet);
-        PetResponseDto petResponseDto = mapper.mapToPetResponseDto(savedPet);
+        PetResponseDto petResponseDto = petMapper.mapToPetResponseDto(savedPet);
         try {
             // owner-service ile iletişim kurup owner id bilgisi ile sahip bilgilerini aktaracaz.
             // exchange(): bütün http isteklerini gerçekleştirmemizi sağlar
-            String url = "http://localhost:8083/api/v1/owners/"+pet.getOwnerId();
+            String url = "http://localhost:8083/api/v1/owners/" + pet.getOwnerId();
             ResponseEntity<OwnerResponseDto> owner = restTemplate.exchange(url,
                     HttpMethod.GET,
                     null,
@@ -51,7 +64,7 @@ public class PetService {
 
             petResponseDto.setOwnerResponseDto(owner.getBody());
 
-        }catch (HttpClientErrorException e) {
+        } catch (HttpClientErrorException e) {
             // 4xx hatalarını yakalayın
             throw new RuntimeException(e.getMessage());
         } catch (HttpServerErrorException e) {
@@ -61,61 +74,66 @@ public class PetService {
             // Diğer hatalar
             throw new RuntimeException(e.getMessage());
         }
-
-
         return petResponseDto;
     }
 
 
+    // creating fall back method for circuit breaker
+    public PetResponseDto ownerFallback(Exception e) {
+        log.error("Fallback method called: " + e.getMessage());
+        return PetResponseDto.builder().build();
+    }
+
+    public List<PetResponseDto> getAllPets() {
+        log.info("PetResponseDto::getAllPets started");
+
+        List<Pet> pets = petRepository.findAll();
+        log.info("PetResponseDto::getAllPets pets : {}", pets);
+
+        log.info("PetResponseDto::getAllPets finished");
+        return petMapper.mapToPetResponseDtoList(pets);
+    }
+
+
     public PetResponseDto getPetById(String id) {
+        log.info("PetResponseDto::getPetById started");
+
         Pet pet = petRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pet not found"));
-        return mapper.mapToPetResponseDto(pet);
+        log.info("PetResponseDto::getPetById pet : {}", pet);
+
+        log.info("PetResponseDto::getPetById finished");
+        return petMapper.mapToPetResponseDto(pet);
+    }
+
+    public List<PetResponseDto> getPetByType(String petType) {
+        log.info("PetResponseDto::getPetByType started");
+
+        // stream kullanarak filtreleme yapalım
+        List<Pet> pets = petRepository.findAll()
+                .stream()
+                .filter(pet -> pet.getType().equalsIgnoreCase(petType))
+                .toList();
+        log.info("PetResponseDto::getPetByType pets :{}", pets);
+
+        log.info("PetResponseDto::getPetByType finished");
+        return petMapper.mapToPetResponseDtoList(pets);
     }
 
 
     public List<PetResponseDto> getPetByOwnerId(String ownerId) {
+        log.info("PetResponseDto::getPetByOwnerId started");
+
         Pet pet = petRepository.findPetByOwnerId(ownerId)
                 .orElseThrow(() -> new RuntimeException("owner not found with id:" + ownerId));
+        log.info("PetResponseDto::getPetByOwnerId pet : {}", pet);
 
         ArrayList<Pet> pets = new ArrayList<>();
-
         pets.add(pet);
 
-        return mapper.mapToPetResponseDtoList(pets);
-    }
+        log.info("PetResponseDto::getPetByOwnerId pets : {}", pets);
 
-
-    private PetResponseDto mapToPetResponseDto(Pet pet) {
-        return PetResponseDto.builder()
-                .id(pet.getId())
-                .ownerId(pet.getOwnerId())
-                .name(pet.getName())
-                .type(pet.getType())
-                .age(pet.getAge())
-                .breed(pet.getBreed())
-                .description(pet.getDescription())
-                .gender(pet.getGender())
-                .color(pet.getColor())
-                .build();
-    }
-
-    private List<PetResponseDto> mapToPetResponseDtoList(List<Pet> pets) {
-        return pets.stream()
-                .map(this::mapToPetResponseDto)
-                .toList();
-    }
-
-    private Pet mapToPet(PetRequestDto petRequestDto) {
-        return Pet.builder()
-                .ownerId(petRequestDto.getOwnerId())
-                .name(petRequestDto.getName())
-                .type(petRequestDto.getType())
-                .age(petRequestDto.getAge())
-                .breed(petRequestDto.getBreed())
-                .description(petRequestDto.getDescription())
-                .gender(petRequestDto.getGender())
-                .color(petRequestDto.getColor())
-                .build();
+        log.info("PetResponseDto::getPetByOwnerId finished");
+        return petMapper.mapToPetResponseDtoList(pets);
     }
 }

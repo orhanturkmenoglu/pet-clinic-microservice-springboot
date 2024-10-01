@@ -21,3 +21,47 @@ spring:
 
   config:
     import: configserver:http://localhost:8088
+
+
+# actuator config
+management:
+  health:
+    circuitbreakers:
+      enabled: true  # Spring Boot Actuator üzerinden Circuit Breaker sağlık durumu kontrolü (health check) aktifleştirilmiştir.
+  endpoints:
+    web:
+      exposure:           # spring Boot Actuator'da health uç noktasının dış dünyaya açılmasını sağlar.
+        include: health, info, metrics, loggers, env, threaddump  #Yani, http://localhost:8080/actuator/health gibi bir istek yapıldığında, uygulamanın sağlık durumu görüntülenebilir.
+  endpoint:
+    health:
+      show-details: always  # Health (sağlık durumu) uç noktasında tüm detayların her zaman gösterilmesini sağlar
+
+resilience4j:
+  circuitbreaker:
+    instances: #Bu bölümde, Resilience4j Circuit Breaker konfigürasyonu yapılmış ve özel bir Circuit Breaker örneği olan ownerBreaker tanımlanmış
+      ownerBreaker:
+        register-health-indicator: true  #  Circuit Breaker’ın sağlık durumu bilgisinin Actuator tarafından izlenebilmesi için bir sağlık göstergesi (health indicator) kaydedilmesini sağlar.
+        event-consumer-buffer-size: 10   # Circuit Breaker'da meydana gelen olayları (örneğin, açık, kapalı veya yarı-açık durum değişiklikleri) takip etmek için bir tampon (buffer) ayarlanır
+        failure-rate-threshold: 50       #Circuit Breaker'ın devreye girmesi için hata oranı eşik değeri %50 olarak ayarlanmıştır.
+        minimum-number-of-calls: 5       # Circuit Breaker’ın devreye girmesi için en az 5 çağrının yapılması gerekmektedir.
+        automatic-transition-from-open-to-half-open-enabled: true  # Circuit Breaker’ın otomatik olarak açık durumdan yarı açık duruma geçmesini sağlar.
+        wait-duration-in-open-state: 6s  # Circuit Breaker açık durumdayken bekleme süresini 6 saniye olarak belirler.
+        permitted-number-of-calls-in-half-open-state: 3  # Yarı-açık durumda Circuit Breaker’ın izin verdiği çağrı sayısıdır.
+        sliding-window-size: 10          # Kaydırmalı pencere boyutu 10 olarak ayarlanmıştır.
+        sliding-window-type: COUNT_BASED  #Circuit Breaker, kaydırmalı pencereyi çağrı sayısına göre yönetir. Burada, çağrı sayısına dayalı bir pencere kullanılır (COUNT_BASED), yani belirli bir çağrı sayısı incelenir
+
+ #retry config
+  retry:
+    instances:
+      ownerRetry :
+         max-attempts: 3 #maximum tekrar deneme sayısı
+         wait-duration: 5s #tekrar deneme süresi
+
+  ratelimiter:  #Bu yapılandırmada, Resilience4j RateLimiter ile belirli bir zaman diliminde kaç işlem yapılabileceği kısıtlanmıştır.
+    instances:
+      ownerRateLimiter:
+        limit-refresh-period: 4s  # Her 4 saniyede bir, izin verilen işlem hakkı sıfırlanır.Yani, Rate Limiter her 4 saniyede bir yeniden işlem yapma izni verir.
+        limit-for-period: 2       # her 4 saniyelik süre boyunca en fazla 2 işlem yapılabilir
+        timeout-duration: 0s      # Eğer izin verilen çağrı sayısı dolmuşsa ve yeni bir çağrı yapılmak istenirse, bu çağrı için bekleme süresi ayarlanır.
+
+

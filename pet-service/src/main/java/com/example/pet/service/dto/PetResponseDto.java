@@ -3,8 +3,11 @@ package com.example.pet.service.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -40,6 +43,9 @@ public class PetResponseDto implements Serializable {
 
     @Schema(description = "A description of the pet", example = "Friendly and playful")
     private String description;
+
+    @Schema(description = "The date and time when the pet was created", example = "2023-05-01T10:30:00")
+    private LocalDateTime petDate;
 
     // sahip bilgilerini dön.
     @Transient

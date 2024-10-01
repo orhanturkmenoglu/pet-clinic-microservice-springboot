@@ -38,7 +38,4 @@ public class VeterinarianRequestDto implements Serializable {
     @Schema(description = "Address of the veterinarian", example = "456 Elm St, Springfield")
     private String address;
 
-    @Schema(description = "The date and time when the veterinarian was created", example = "2023-09-28T10:15:30")
-    @Getter
-    private LocalDateTime veterinarianDate;
 }

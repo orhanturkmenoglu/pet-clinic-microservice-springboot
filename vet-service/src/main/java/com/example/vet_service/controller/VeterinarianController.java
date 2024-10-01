@@ -63,6 +63,21 @@ public class VeterinarianController {
         return ResponseEntity.ok(veterinarianResponseDto);
     }
 
+
+    @Operation(summary = "Get veterinarian by ID", description = "Retrieves a veterinarian's details by their ID.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Veterinarian retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "Veterinarian not found")
+    })
+    @GetMapping({"/specialization"})
+    public ResponseEntity<List<VeterinarianResponseDto>> getVeterinarianBySpecialization(
+            @Parameter(description = "specialization of the veterinarian to be retrieved", required = true)
+            @RequestParam("specialization") String specialization)
+    {
+        List<VeterinarianResponseDto> veterinarianResponseDtoList = veterinarianService.getVeterinarianBySpecialization(specialization);
+        return ResponseEntity.ok(veterinarianResponseDtoList);
+    }
+
     @Operation(summary = "Delete veterinarian by ID", description = "Deletes a veterinarian by their ID.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Veterinarian deleted successfully"),

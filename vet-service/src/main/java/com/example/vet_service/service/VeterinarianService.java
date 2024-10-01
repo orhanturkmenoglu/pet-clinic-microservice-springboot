@@ -19,13 +19,13 @@ public class VeterinarianService {
 
     private final VeterinarianRepository veterinarianRepository;
 
-    private final VeterinarianMapper mapper = VeterinarianMapper.INSTANCE;
+    private final VeterinarianMapper veterinarianMapper;
 
     @Transactional
     public VeterinarianResponseDto createVeterinarian(VeterinarianRequestDto veterinarianRequestDto) {
         log.info("VeterinarianService::createVeterinarian started");
 
-        Veterinarian veterinarian = mapper.mapToVeterinarian(veterinarianRequestDto);
+        Veterinarian veterinarian = veterinarianMapper.mapToVeterinarian(veterinarianRequestDto);
         Veterinarian savedVeterinarian = veterinarianRepository.save(veterinarian);
 
 
@@ -33,7 +33,7 @@ public class VeterinarianService {
                 "savedVeterinarian : {}", veterinarian, savedVeterinarian);
 
         log.info("VeterinarianService::createVeterinarian finished");
-        return mapper.mapToVeterinarianResponseDto(savedVeterinarian);
+        return veterinarianMapper.mapToVeterinarianResponseDto(savedVeterinarian);
     }
 
     public List<VeterinarianResponseDto> getAllVeterinarians() {
@@ -42,7 +42,7 @@ public class VeterinarianService {
         List<Veterinarian> veterinarians = veterinarianRepository.findAll();
 
         log.info("VeterinarianService::getAllVeterinarians finished");
-        return mapper.mapToVeterinarianResponseDtoList(veterinarians);
+        return veterinarianMapper.mapToVeterinarianResponseDtoList(veterinarians);
     }
 
     public VeterinarianResponseDto getVeterinarianById(String id) {
@@ -51,7 +51,19 @@ public class VeterinarianService {
         Veterinarian veterinarian = veterinarianRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Veterinarian not found with id: " + id));
 
-        return mapper.mapToVeterinarianResponseDto(veterinarian);
+        return veterinarianMapper.mapToVeterinarianResponseDto(veterinarian);
+    }
+
+    public List<VeterinarianResponseDto> getVeterinarianBySpecialization(String  firstName){
+        log.info("VeterinarianService::getVeterinarianBySpecialization started");
+
+        List<Veterinarian> veterinarians = veterinarianRepository
+                .findBySpecializationIsLikeIgnoreCase(firstName);
+
+        log.info("VeterinarianService::getVeterinarianBySpecialization  veterinarians :{} ,"
+                ,veterinarians);
+
+        return veterinarianMapper.mapToVeterinarianResponseDtoList(veterinarians);
     }
 
     public void deleteVeterinarian(String id) {

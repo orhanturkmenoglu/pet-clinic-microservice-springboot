@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -32,4 +33,8 @@ public class OwnerResponseDto implements Serializable {
 
     @Schema(description = "Address of the owner", example = "123 Main St, Springfield")
     private String address;
+
+    @Schema(description = "Date and time when the owner was created", example = "2023-05-01T10:30:00")
+    private LocalDateTime ownerDate;
+
 }

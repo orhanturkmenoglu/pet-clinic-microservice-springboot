@@ -3,16 +3,15 @@ package com.example.owner_service.service;
 import com.example.owner_service.dto.OwnerRequestDto;
 import com.example.owner_service.dto.OwnerResponseDto;
 import com.example.owner_service.external.PetClientService;
-import com.example.owner_service.model.Pet;
+import com.example.owner_service.mapper.OwnerMapper;
 import com.example.owner_service.model.Owner;
 import com.example.owner_service.repository.OwnerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,14 +25,21 @@ public class OwnerService {
 
     private final PetClientService petClientService;
 
+    private final OwnerMapper ownerMapper ;
+
 
     // Sahip oluşturma
+    @Transactional
     public OwnerResponseDto createOwner(OwnerRequestDto ownerRequestDto) {
-        Owner owner = mapToOwner(ownerRequestDto);
+        Owner owner = ownerMapper.mapToOwner(ownerRequestDto);
+
+        System.out.println("Owner: " + owner);
 
         Owner savedOwner = ownerRepository.save(owner);
 
-        return mapToOwnerResponseDto(savedOwner);
+        System.out.println("savedOwner: " + savedOwner);
+
+        return ownerMapper.mapToOwnerResponseDto(savedOwner);
     }
 
 
@@ -46,8 +52,7 @@ public class OwnerService {
         // feign client ile http tabanlı servisler ile iletişim kurabiliriz rest template ile aynı işlevi yerine
         // getirir ama feign client daha kolay ve okunabilir bir şekilde yazılır. kod yazımıını azaltır
 
-
-        OwnerResponseDto ownerResponseDto = mapToOwnerResponseDto(owner);
+        OwnerResponseDto ownerResponseDto = ownerMapper.mapToOwnerResponseDto(owner);
 
         log.info("OwnerResponseDto::findOwnerById Owner: {}", ownerResponseDto);
         return ownerResponseDto;
@@ -65,7 +70,7 @@ public class OwnerService {
             owner.setAddress(ownerRequest.getAddress());
 
             Owner updatedOwner = ownerRepository.save(owner);
-            return mapToOwnerResponseDto(updatedOwner);
+            return ownerMapper.mapToOwnerResponseDto(updatedOwner);
         }
         return null; // Veya özel bir hata fırlatabilirsiniz
     }
@@ -73,28 +78,6 @@ public class OwnerService {
     // Sahibi silme
     public void deleteOwner(String id) {
         ownerRepository.deleteById(id);
-    }
-
-
-    private OwnerResponseDto mapToOwnerResponseDto(Owner owner) {
-        return OwnerResponseDto.builder()
-                .id(owner.getId())
-                .firstName(owner.getFirstName())
-                .lastName(owner.getLastName())
-                .phoneNumber(owner.getPhoneNumber())
-                .email(owner.getEmail())
-                .address(owner.getAddress())
-                .build();
-    }
-
-    private Owner mapToOwner(OwnerRequestDto ownerRequestDto) {
-        return Owner.builder()
-                .firstName(ownerRequestDto.getFirstName())
-                .lastName(ownerRequestDto.getLastName())
-                .phoneNumber(ownerRequestDto.getPhoneNumber())
-                .email(ownerRequestDto.getEmail())
-                .address(ownerRequestDto.getAddress())
-                .build();
     }
 
 }

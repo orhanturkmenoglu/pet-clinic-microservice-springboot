@@ -3,21 +3,45 @@ package com.example.vet_service.mapper;
 import com.example.vet_service.dto.VeterinarianRequestDto;
 import com.example.vet_service.dto.VeterinarianResponseDto;
 import com.example.vet_service.model.Veterinarian;
-import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
+import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
-@Mapper
-public interface VeterinarianMapper {
+@Component
+public class VeterinarianMapper {
 
-    VeterinarianMapper INSTANCE = Mappers.getMapper(VeterinarianMapper.class);
+    public VeterinarianResponseDto mapToVeterinarianResponseDto(Veterinarian veterinarian) {
+        return VeterinarianResponseDto.builder()
+                .id(veterinarian.getId())
+                .firstName(veterinarian.getFirstName())
+                .lastName(veterinarian.getLastName())
+                .email(veterinarian.getEmail())
+                .availability(veterinarian.getAvailability())
+                .specialization(veterinarian.getSpecialization())
+                .address(veterinarian.getAddress())
+                .phoneNumber(veterinarian.getPhoneNumber())
+                .veterinarianDate(veterinarian.getVeterinarianDate())
+                .build();
+    }
 
-    VeterinarianResponseDto mapToVeterinarianResponseDto(Veterinarian veterinarian);
+    public Veterinarian mapToVeterinarian(VeterinarianRequestDto veterinarianRequestDto) {
+        return  Veterinarian.builder()
+                .firstName(veterinarianRequestDto.getFirstName())
+                .lastName(veterinarianRequestDto.getLastName())
+                .email(veterinarianRequestDto.getEmail())
+                .availability(veterinarianRequestDto.getAvailability())
+                .specialization(veterinarianRequestDto.getSpecialization())
+                .address(veterinarianRequestDto.getAddress())
+                .phoneNumber(veterinarianRequestDto.getPhoneNumber())
+                .build();
+    }
 
-    Veterinarian mapToVeterinarian(VeterinarianRequestDto veterinarianRequestDto);
-
-    List<VeterinarianResponseDto> mapToVeterinarianResponseDtoList(List<Veterinarian> veterinarians);
+    public List<VeterinarianResponseDto> mapToVeterinarianResponseDtoList(List<Veterinarian> veterinarians) {
+        return veterinarians.stream()
+                .map(this::mapToVeterinarianResponseDto)
+                .toList();
+    }
 
 
 }

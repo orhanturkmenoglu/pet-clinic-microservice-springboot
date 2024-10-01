@@ -34,17 +34,55 @@ public class PetController {
         return ResponseEntity.status(HttpStatus.CREATED).body(petResponseDto);
     }
 
+    @GetMapping("/all")
+    @Operation(summary = "Get all pets")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Pet successful"),
+            @ApiResponse(responseCode = "400", description = "Invalid input")
+    })
+    public ResponseEntity<List<PetResponseDto>> getAllPets() {
+        List<PetResponseDto> petResponseDtoList = petService.getAllPets();
+        return ResponseEntity.ok(petResponseDtoList);
+    }
 
-    @GetMapping("owner/{ownerId}")
+
+    @GetMapping("/petType")
+    @Operation(summary = "get all pets by type")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Pet successful"),
+            @ApiResponse(responseCode = "400", description = "Invalid input")
+    })
+    public ResponseEntity<List<PetResponseDto>> getPetByType(
+            @Parameter(description = "PetType", required = true)
+            @RequestParam String petType) {
+        List<PetResponseDto> petResponseDtoList = petService.getPetByType(petType);
+        return ResponseEntity.ok(petResponseDtoList);
+    }
+
+    @GetMapping("/petId")
+    @Operation(summary = "get pet by id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Pet successful"),
+            @ApiResponse(responseCode = "400", description = "Invalid input")
+    })
+    public ResponseEntity<PetResponseDto> getPetById(
+            @Parameter(description = "Pet id", required = true)
+            @RequestParam String petId) {
+        PetResponseDto petResponseDtoList = petService.getPetById(petId);
+        return ResponseEntity.ok(petResponseDtoList);
+    }
+
+    @GetMapping("/ownerId")
     @Operation(summary = "get pet by owner id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Pet successful"),
             @ApiResponse(responseCode = "400", description = "Invalid input")
     })
     public ResponseEntity<List<PetResponseDto>> getPetByOwnerId(
-            @Parameter(description = "Owner ID", required = true)
-            @PathVariable String ownerId) {
-        return ResponseEntity.ok(petService.getPetByOwnerId(ownerId));
+            @Parameter(description = "Pet owner id", required = true)
+            @RequestParam String ownerId) {
+        List<PetResponseDto> petResponseDtoList = petService.getPetByOwnerId(ownerId);
+        return ResponseEntity.ok(petResponseDtoList);
     }
 
 }
