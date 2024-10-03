@@ -15,11 +15,13 @@
         <module name="api-gateway" />
         <module name="report-service" />
         <module name="service-registry" />
-        <module name="notification-service" />
         <module name="billing-service" />
         <module name="owner-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="notification-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

@@ -4,57 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="Add fault tolerance to Pet Service with Resilience4j: Circuit Breaker, Retry, and Rate Limiter implemented">
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/mapper/AppointmentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/mapper/BillingMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/mapper/MedicalRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/mapper/ReportMapper.java" afterDir="false" />
+    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="feat: compiler.xml">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/dto/AppointmentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/dto/AppointmentResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/repository/AppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/service/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/controller/BillingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/controller/BillingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/model/Billing.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/model/Billing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/repository/BillingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/repository/BillingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/service/BillingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/service/BillingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/controller/MedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/controller/MedicalRecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/dto/MedicalRecordResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/dto/MedicalRecordResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/model/MedicalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/model/MedicalRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/repository/MedicalRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/repository/MedicalRecordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/service/MedicalRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/service/MedicalRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/controller/OwnerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/mapper/OwnerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/mapper/OwnerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/model/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/repository/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/repository/OwnerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/mapper/PetMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/mapper/PetMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/model/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/model/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/repository/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/repository/PetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/model/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/repository/ReportRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/repository/VeterinarianRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/repository/VeterinarianRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,45 +55,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.owner-service [clean,install].executor": "Run",
-    "Maven.owner-service [compile].executor": "Run",
-    "Maven.pet-service [clean,install].executor": "Run",
-    "Maven.pet-service [compile].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ApiGatewayApplication.executor": "Run",
-    "Spring Boot.ConfigServerApplication.executor": "Run",
-    "Spring Boot.MedicalRecordServiceApplication.executor": "Run",
-    "Spring Boot.OwnerServiceApplication.executor": "Run",
-    "Spring Boot.PetServiceApplication.executor": "Run",
-    "Spring Boot.ServiceRegistryApplication.executor": "Run",
-    "Spring Boot.VetServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/spring-boot/pet-clinic-microservice-springboot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "service.view.auto.scroll.to.source": "true",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.api-gateway [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.owner-service [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.owner-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.pet-service [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.pet-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MedicalRecordServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OwnerServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PetServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ServiceRegistryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.VetServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/spring-boot/pet-clinic-microservice-springboot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -299,7 +254,7 @@
       <workItem from="1727761764075" duration="46000" />
       <workItem from="1727784222060" duration="11935000" />
       <workItem from="1727859470995" duration="225000" />
-      <workItem from="1727957490859" duration="9970000" />
+      <workItem from="1727957490859" duration="10866000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -429,7 +384,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727797241081</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="git commit -m &quot;Create repository, service, and controller layers for Appointment management.&#10;&#10;- Appointment entity and repository created.&#10;- AppointmentService implemented with methods for creating, retrieving, updating, and deleting appointments.&#10;- AppointmentController created with RESTful endpoints for appointment management.&#10;- Added OpenAPI annotations for documentation.&#10;- Implemented AppointmentMapper for DTO conversions.&quot;">
+      <option name="closed" value="true" />
+      <created>1727968550236</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1727968550237</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +422,9 @@
     <MESSAGE value="feat: Implemented Veterinarian service DTO mapping using MapStruct" />
     <MESSAGE value="feat: Implemented Pet service DTO mapping using MapStruct" />
     <MESSAGE value="Add fault tolerance to Pet Service with Resilience4j: Circuit Breaker, Retry, and Rate Limiter implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add fault tolerance to Pet Service with Resilience4j: Circuit Breaker, Retry, and Rate Limiter implemented" />
+    <MESSAGE value="git commit -m &quot;Create repository, service, and controller layers for Appointment management.&#10;&#10;- Appointment entity and repository created.&#10;- AppointmentService implemented with methods for creating, retrieving, updating, and deleting appointments.&#10;- AppointmentController created with RESTful endpoints for appointment management.&#10;- Added OpenAPI annotations for documentation.&#10;- Implemented AppointmentMapper for DTO conversions.&quot;" />
+    <MESSAGE value="feat: compiler.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: compiler.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
