@@ -4,24 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="feat: Implemented Pet service DTO mapping using MapStruct">
-      <change afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/mapper/OwnerMapper.java" afterDir="false" />
+    <list default="true" id="97aca8b5-f0b8-448f-879d-7a75f5ddd5fc" name="Changes" comment="Add fault tolerance to Pet Service with Resilience4j: Circuit Breaker, Retry, and Rate Limiter implemented">
+      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/mapper/AppointmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/mapper/BillingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/mapper/MedicalRecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/mapper/ReportMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owner-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/controller/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/dto/AppointmentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/dto/AppointmentResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/model/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/repository/AppointmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/example/appointment_service/service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/controller/BillingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/controller/BillingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/dto/BillingResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/model/Billing.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/model/Billing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/repository/BillingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/repository/BillingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/service/BillingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/example/billing_service/service/BillingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/controller/MedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/controller/MedicalRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/dto/MedicalRecordResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/dto/MedicalRecordResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/model/MedicalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/model/MedicalRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/repository/MedicalRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/repository/MedicalRecordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/service/MedicalRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record-service/src/main/java/com/example/medical_record_service/service/MedicalRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/controller/OwnerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/dto/OwnerResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/mapper/OwnerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/mapper/OwnerMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/model/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/model/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/repository/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/repository/OwnerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/controller/PetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/mapper/PetMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/mapper/PetMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/model/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/model/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/repository/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/repository/PetRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pet-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vet-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/dto/ReportResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/repository/ReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/dto/VeterinarianResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/model/Veterinarian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/repository/VeterinarianRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/repository/VeterinarianRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java" beforeDir="false" afterPath="$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java" afterDir="false" />
     </list>
@@ -38,8 +69,8 @@
       <list>
         <option value="com.intellij.jpb.NewClass" />
         <option value="com.intellij.jpb.JpaRepository" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -266,7 +297,9 @@
       <workItem from="1727702894843" duration="77000" />
       <workItem from="1727707921659" duration="11083000" />
       <workItem from="1727761764075" duration="46000" />
-      <workItem from="1727784222060" duration="11618000" />
+      <workItem from="1727784222060" duration="11935000" />
+      <workItem from="1727859470995" duration="225000" />
+      <workItem from="1727957490859" duration="9970000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Initialized Pet Clinic microservices with packaging and OpenAPI documentation for Pet Service&#10;&#10;- Set up microservice architecture for Pet Clinic application&#10;- Completed packaging and module structuring for different services&#10;- Added OpenAPI documentation for Pet Service">
       <option name="closed" value="true" />
@@ -388,7 +421,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727726763212</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add fault tolerance to Pet Service with Resilience4j: Circuit Breaker, Retry, and Rate Limiter implemented">
+      <option name="closed" value="true" />
+      <created>1727797241081</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1727797241081</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,39 +458,40 @@
     <MESSAGE value="Renamed model in Veterinarian service&#10;&#10;- Changed the name of the model in the Veterinarian service for better clarity and consistency." />
     <MESSAGE value="feat: Implemented Veterinarian service DTO mapping using MapStruct" />
     <MESSAGE value="feat: Implemented Pet service DTO mapping using MapStruct" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Implemented Pet service DTO mapping using MapStruct" />
+    <MESSAGE value="Add fault tolerance to Pet Service with Resilience4j: Circuit Breaker, Retry, and Rate Limiter implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add fault tolerance to Pet Service with Resilience4j: Circuit Breaker, Retry, and Rate Limiter implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
-          <line>48</line>
+          <line>58</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
-          <line>126</line>
+          <line>130</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/controller/OwnerController.java</url>
-          <line>45</line>
+          <line>48</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
-          <line>100</line>
+          <line>104</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/controller/VeterinarianController.java</url>
-          <line>46</line>
+          <line>40</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/service/VeterinarianService.java</url>
-          <line>41</line>
+          <line>42</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -459,13 +501,73 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/dto/PetResponseDto.java</url>
-          <line>17</line>
+          <line>15</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
-          <line>33</line>
+          <line>29</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/report-service/src/main/java/com/example/report_service/service/ReportService.java</url>
+          <line>177</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/service/PetService.java</url>
+          <line>252</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianMapper.java</url>
@@ -478,7 +580,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/vet-service/src/main/java/com/example/vet_service/mapper/VeterinarianMapper.java</url>
-          <line>39</line>
+          <line>40</line>
           <properties class="com.example.vet_service.mapper.VeterinarianMapper" method="mapToVeterinarianResponseDtoList">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -487,7 +589,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/mapper/PetMapper.java</url>
-          <line>14</line>
+          <line>12</line>
           <properties class="com.example.pet.service.mapper.PetMapper" method="mapToPetResponseDto">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -496,7 +598,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/pet-service/src/main/java/com/example/pet/service/mapper/PetMapper.java</url>
-          <line>29</line>
+          <line>28</line>
           <properties class="com.example.pet.service.mapper.PetMapper" method="mapToPet">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -514,8 +616,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/owner-service/src/main/java/com/example/owner_service/service/OwnerService.java</url>
-          <line>27</line>
-          <properties field="mapper" class="com.example.owner_service.service.OwnerService" />
+          <line>23</line>
+          <properties field="ownerMapper" class="com.example.owner_service.service.OwnerService" />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>

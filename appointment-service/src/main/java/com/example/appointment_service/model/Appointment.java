@@ -29,6 +29,8 @@ public class Appointment implements Serializable {
     private String vetId;
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime appointmentDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime updatedAt;
     private String reason;
     private String status;
 }

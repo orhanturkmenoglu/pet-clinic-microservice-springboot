@@ -22,6 +22,7 @@ public class VeterinarianMapper {
                 .address(veterinarian.getAddress())
                 .phoneNumber(veterinarian.getPhoneNumber())
                 .veterinarianDate(veterinarian.getVeterinarianDate())
+                .updatedAt(LocalDateTime.now())
                 .build();
     }
 

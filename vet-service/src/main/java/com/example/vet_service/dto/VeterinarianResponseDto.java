@@ -43,4 +43,7 @@ public class VeterinarianResponseDto implements Serializable {
 
     @Schema(description = "The date and time when the veterinarian was created", example = "2023-09-28T10:15:30")
     private LocalDateTime veterinarianDate;
+
+    @Schema(description = "The date and time when the veterinarian was updatedAt", example = "2023-09-28T10:15:30")
+    private LocalDateTime  updatedAt;
 }

@@ -34,6 +34,9 @@ public class PetRequestDto implements Serializable {
     @Schema(description = "The color of the pet", example = "Golden")
     private String color;
 
+    @Schema(description = "The weight of the pet", example = "15.5")
+    private Double weight;
+
     @Schema(description = "A description of the pet", example = "Friendly and playful")
     private String description;
 }

@@ -28,6 +28,9 @@ public class AppointmentResponseDto implements Serializable {
     @Schema(description = "Date and time of the appointment", example = "2024-10-05T14:30:00")
     private LocalDateTime appointmentDate;
 
+    @Schema(description = "Updated at of the appointment", example = "2024-10-05T14:30:00")
+    private LocalDateTime updatedAt;
+
     @Schema(description = "Reason for the appointment", example = "General check-up for vaccination")
     private String reason;
 

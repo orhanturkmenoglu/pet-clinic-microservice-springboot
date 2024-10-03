@@ -33,6 +33,7 @@ public class OwnerMapper {
                 .address(owner.getAddress())
                 .phoneNumber(owner.getPhoneNumber())
                 .ownerDate(owner.getOwnerDate())
+                .updatedAt(LocalDateTime.now())
                 .build();
     }
 

@@ -37,4 +37,7 @@ public class OwnerResponseDto implements Serializable {
     @Schema(description = "Date and time when the owner was created", example = "2023-05-01T10:30:00")
     private LocalDateTime ownerDate;
 
+    @Schema(description = "Date and time when the owner was updatedAt", example = "2023-05-01T10:30:00")
+    private LocalDateTime updatedAt;
+
 }

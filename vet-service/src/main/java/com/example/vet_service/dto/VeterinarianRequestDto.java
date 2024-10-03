@@ -1,10 +1,12 @@
 package com.example.vet_service.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 
 @Data
@@ -37,5 +39,7 @@ public class VeterinarianRequestDto implements Serializable {
 
     @Schema(description = "Address of the veterinarian", example = "456 Elm St, Springfield")
     private String address;
+
+
 
 }

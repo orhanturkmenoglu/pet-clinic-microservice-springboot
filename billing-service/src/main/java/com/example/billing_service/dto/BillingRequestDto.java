@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -31,6 +30,4 @@ public class BillingRequestDto implements Serializable {
     @Schema(description = "Current status of the billing (e.g., PENDING, PAID, CANCELLED)", example = "PAID")
     private String status;
 
-    @Schema(description = "Date and time of the payment", example = "2023-09-28T15:30:00")
-    private LocalDateTime paymentDate;
 }

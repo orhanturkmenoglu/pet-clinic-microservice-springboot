@@ -28,9 +28,14 @@ public class MedicalRecordResponseDto {
     @Schema(description = "Date and time when the pet visited the veterinarian", example = "2023-09-28T14:30:00")
     private LocalDateTime visitDate;
 
+    @Schema(description = "Date and time when the pet updatedAt the veterinarian", example = "2023-09-28T14:30:00")
+    private LocalDateTime updatedAt;
+
     @Schema(description = "Diagnosis provided by the veterinarian", example = "Viral infection")
     private String diagnosis;
 
     @Schema(description = "Treatment prescribed by the veterinarian", example = "Antibiotics and rest")
     private String treatment;
+
+
 }

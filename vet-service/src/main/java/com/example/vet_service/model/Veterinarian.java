@@ -45,6 +45,10 @@ public class Veterinarian implements Serializable {
     @Getter
     private LocalDateTime  veterinarianDate;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    @Getter
+    private LocalDateTime  updatedAt;
+
     @PrePersist
     protected void onCreate() {
         this.veterinarianDate = LocalDateTime.now(); // Kayıt yapıldığında tarih otomatik olarak atanır

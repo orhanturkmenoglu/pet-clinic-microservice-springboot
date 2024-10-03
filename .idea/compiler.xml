@@ -14,8 +14,8 @@
         <module name="pet-service" />
         <module name="api-gateway" />
         <module name="report-service" />
-        <module name="notification-service" />
         <module name="service-registry" />
+        <module name="notification-service" />
         <module name="billing-service" />
         <module name="owner-service" />
       </profile>

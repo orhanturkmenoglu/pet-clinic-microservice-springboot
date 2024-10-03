@@ -33,4 +33,7 @@ public class BillingResponseDto implements Serializable {
 
     @Schema(description = "Date and time of the payment", example = "2023-09-28T15:30:00")
     private LocalDateTime paymentDate;
+
+    @Schema(description = "Updated at of the payment", example = "2023-09-28T15:30:00")
+    private LocalDateTime updatedAt;
 }

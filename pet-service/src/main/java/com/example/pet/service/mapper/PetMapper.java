@@ -5,12 +5,10 @@ import com.example.pet.service.dto.PetResponseDto;
 import com.example.pet.service.model.Pet;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
 public class PetMapper {
-
 
     public PetResponseDto mapToPetResponseDto(Pet pet){
         return PetResponseDto.builder()
@@ -24,6 +22,7 @@ public class PetMapper {
                 .type(pet.getType())
                 .gender(pet.getGender())
                 .petDate(pet.getPetDate())
+                .updatedAt(pet.getUpdatedAt())
                 .build();
     }
 
@@ -37,7 +36,6 @@ public class PetMapper {
                 .description(petRequestDto.getDescription())
                 .type(petRequestDto.getType())
                 .gender(petRequestDto.getGender())
-                .petDate(LocalDateTime.now())
                 .build();
     }
 

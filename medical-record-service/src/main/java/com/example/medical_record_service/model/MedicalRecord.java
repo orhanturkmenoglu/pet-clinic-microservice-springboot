@@ -24,6 +24,11 @@ public class MedicalRecord {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime visitDate;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime updatedAt;
+
     private String diagnosis;
     private String treatment;
+
 }
