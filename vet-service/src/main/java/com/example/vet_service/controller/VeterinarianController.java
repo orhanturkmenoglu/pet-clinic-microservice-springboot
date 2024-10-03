@@ -6,6 +6,7 @@ import com.example.vet_service.service.VeterinarianService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,7 @@ public class VeterinarianController {
             description = "Creates a new veterinarian with the provided details.")
     @PostMapping
     public ResponseEntity<VeterinarianResponseDto> createVeterinarian(
+            @Valid
             @Parameter(description = "Veterinarian creation details", required = true)
             @RequestBody VeterinarianRequestDto veterinarianRequestDto) {
         VeterinarianResponseDto veterinarianResponseDto = veterinarianService.createVeterinarian(veterinarianRequestDto);
