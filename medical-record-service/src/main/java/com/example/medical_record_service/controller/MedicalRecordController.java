@@ -5,6 +5,7 @@ import com.example.medical_record_service.dto.MedicalRecordResponseDto;
 import com.example.medical_record_service.service.MedicalRecordService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class MedicalRecordController {
     @Operation(summary = "Create a new medical record",
             description = "Creates a new medical record for a patient based on the provided information.")
     @PostMapping
-    public ResponseEntity<MedicalRecordResponseDto> createMedicalRecord(
+    public ResponseEntity<MedicalRecordResponseDto> createMedicalRecord(@Valid
             @Parameter(description = "Medical record data", required = true)
             @RequestBody MedicalRecordRequestDto medicalRecordRequestDto) {
 

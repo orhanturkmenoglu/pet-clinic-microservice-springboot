@@ -5,6 +5,7 @@ import com.example.owner_service.dto.OwnerResponseDto;
 import com.example.owner_service.service.OwnerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class OwnerController {
     @PostMapping
     @Operation(summary = "Create a new owner",
             description = "Creates a new owner and returns the created owner details.")
-    public ResponseEntity<OwnerResponseDto> createOwner(
+    public ResponseEntity<OwnerResponseDto> createOwner(@Valid
             @Parameter(description = "Owner details to create", required = true)
             @RequestBody OwnerRequestDto ownerRequest) {
         OwnerResponseDto createdOwner = ownerService.createOwner(ownerRequest);

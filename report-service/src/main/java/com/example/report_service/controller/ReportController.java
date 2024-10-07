@@ -5,6 +5,7 @@ import com.example.report_service.dto.ReportResponseDto;
 import com.example.report_service.service.ReportService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,8 @@ public class ReportController {
 
     @Operation(summary = "Create a new report")
     @PostMapping
-    public ResponseEntity<ReportResponseDto> createReport(@RequestBody ReportRequestDto reportRequestDto) {
+    public ResponseEntity<ReportResponseDto> createReport(@Valid
+            @RequestBody ReportRequestDto reportRequestDto) {
         ReportResponseDto createdReport = reportService.createReport(reportRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdReport);
     }

@@ -4,16 +4,27 @@ server:
 spring:
   application:
     name: APPOINTMENT-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/pet-clinic
+    username: root
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
-##eureka config
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    service-url:
-#      defaultZone : http://localhost:8761/eureka
-#
+  ##eureka config
+  #eureka:
+  #  instance:
+  #    prefer-ip-address: true
+  #  client:
+  #    register-with-eureka: true
+  #    fetch-registry: true
+  #    service-url:
+  #      defaultZone : http://localhost:8761/eureka
+  #
   config:
     import: configserver:http://localhost:8088

@@ -5,6 +5,7 @@ import com.example.billing_service.dto.BillingResponseDto;
 import com.example.billing_service.service.BillingService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,8 @@ public class BillingController {
 
     @PostMapping
     @Operation(summary = "Create a new billing", description = "Creates a new billing record")
-    public ResponseEntity<BillingResponseDto> createBilling(@RequestBody BillingRequestDto billingRequestDto) {
+    public ResponseEntity<BillingResponseDto> createBilling(@Valid
+            @RequestBody BillingRequestDto billingRequestDto) {
         BillingResponseDto createdBilling = billingService.createBilling(billingRequestDto);
         return new ResponseEntity<>(createdBilling, HttpStatus.CREATED);
     }

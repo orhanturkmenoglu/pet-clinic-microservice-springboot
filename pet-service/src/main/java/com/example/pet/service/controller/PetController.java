@@ -5,6 +5,7 @@ import com.example.pet.service.dto.PetResponseDto;
 import com.example.pet.service.service.PetService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class PetController {
 
     @PostMapping
     @Operation(summary = "Create a new pet")
-    public ResponseEntity<PetResponseDto> createPet(
+    public ResponseEntity<PetResponseDto> createPet(@Valid
             @Parameter(description = "Pet request DTO containing pet details", required = true)
             @RequestBody PetRequestDto petRequestDto) {
         PetResponseDto petResponseDto = petService.createPet(petRequestDto);

@@ -5,6 +5,7 @@ import com.example.appointment_service.dto.AppointmentResponseDto;
 import com.example.appointment_service.service.AppointmentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class AppointmentController {
 
     @PostMapping
     @Operation(summary = "Create a new appointment")
-    public ResponseEntity<AppointmentResponseDto> createAppointment(
+    public ResponseEntity<AppointmentResponseDto> createAppointment(@Valid
             @RequestBody AppointmentRequestDto appointmentRequestDto) {
         AppointmentResponseDto response = appointmentService.createAppointment(appointmentRequestDto);
         return ResponseEntity.status(201).body(response); // 201 Created
